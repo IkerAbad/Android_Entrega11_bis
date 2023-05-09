@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/search_movies">
+
+    <fragment
+        android:id="@+id/search_movies"
+        android:name="com.jesuitasrioja.android_entrega11.ui.search_movies"
+        android:label="fragment_search_movies"
+        tools:layout="@layout/fragment_search_movies" >
+        <action
+            android:id="@+id/action_search_movies_to_detail_movie"
+            app:destination="@id/detail_movie" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detail_movie"
+        android:name="com.jesuitasrioja.android_entrega11.detail_movie"
+        android:label="fragment_detail_movie"
+        tools:layout="@layout/fragment_detail_movie" >
+        <action
+            android:id="@+id/action_detail_movie_to_search_movies"
+            app:destination="@id/search_movies" />
+    </fragment>
+</navigation>
