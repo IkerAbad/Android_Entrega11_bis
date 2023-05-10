@@ -6,13 +6,13 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.jesuitasrioja.android_entrega11.viewModel.MoviesViewModel" />
+            type="com.jesuitasrioja.android_entrega11.viewModel.AlbumViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".detail_movie">
+        tools:context=".detail_album">
 
         <ImageView
             android:id="@+id/imageView"
@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="52dp"
-            android:text="@{viewmodel.selectedMovie.title}"
+            android:text="@{viewmodel.selectedAlbum.collectionName}"
             android:textSize="34sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="44dp"
-            android:text="@{viewmodel.selectedMovie.description}"
+            android:text="@{viewmodel.selectedAlbum.artistName}"
             android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

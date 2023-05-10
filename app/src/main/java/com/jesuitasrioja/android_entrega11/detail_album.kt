@@ -7,24 +7,24 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.NavHostFragment
-import com.jesuitasrioja.android_entrega11.databinding.FragmentDetailMovieBinding
-import com.jesuitasrioja.android_entrega11.viewModel.MoviesViewModel
+import com.jesuitasrioja.android_entrega11.databinding.FragmentDetailAlbumBinding
+import com.jesuitasrioja.android_entrega11.viewModel.AlbumViewModel
 
 
-class detail_movie : Fragment() {
-    private lateinit var binding: FragmentDetailMovieBinding
-    private val viewModel: MoviesViewModel by activityViewModels()
+class detail_album : Fragment() {
+    private lateinit var binding: FragmentDetailAlbumBinding
+    private val viewModel: AlbumViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding= FragmentDetailMovieBinding.inflate(layoutInflater)
+        binding= FragmentDetailAlbumBinding.inflate(layoutInflater)
         binding.lifecycleOwner=this
         binding.viewmodel=viewModel
         binding.button.setOnClickListener {
-            NavHostFragment.findNavController(this).navigate(R.id.action_detail_movie_to_search_movies)
+            NavHostFragment.findNavController(this).navigate(R.id.action_detail_album_to_search_album)
         }
         return binding.root
     }

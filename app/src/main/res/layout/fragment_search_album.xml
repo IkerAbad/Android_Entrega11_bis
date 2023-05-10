@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.jesuitasrioja.android_entrega11.viewModel.MoviesViewModel" />
+            type="com.jesuitasrioja.android_entrega11.viewModel.AlbumViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

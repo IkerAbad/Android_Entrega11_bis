@@ -3,25 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/search_movies">
+    app:startDestination="@id/search_album">
 
     <fragment
-        android:id="@+id/search_movies"
-        android:name="com.jesuitasrioja.android_entrega11.ui.search_movies"
-        android:label="fragment_search_movies"
-        tools:layout="@layout/fragment_search_movies" >
+        android:id="@+id/detail_album"
+        android:name="com.jesuitasrioja.android_entrega11.detail_album"
+        android:label="detail_album" >
         <action
-            android:id="@+id/action_search_movies_to_detail_movie"
-            app:destination="@id/detail_movie" />
+            android:id="@+id/action_detail_album_to_search_album"
+            app:destination="@id/search_album" />
     </fragment>
-
     <fragment
-        android:id="@+id/detail_movie"
-        android:name="com.jesuitasrioja.android_entrega11.detail_movie"
-        android:label="fragment_detail_movie"
-        tools:layout="@layout/fragment_detail_movie" >
+        android:id="@+id/search_album"
+        android:name="com.jesuitasrioja.android_entrega11.ui.search_album"
+        android:label="search_album" >
         <action
-            android:id="@+id/action_detail_movie_to_search_movies"
-            app:destination="@id/search_movies" />
+            android:id="@+id/action_search_album_to_detail_album"
+            app:destination="@id/detail_album" />
     </fragment>
 </navigation>

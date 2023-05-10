@@ -6,23 +6,23 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.jesuitasrioja.android_entrega11.databinding.FragmentListMoviesBinding
-import com.jesuitasrioja.android_entrega11.model.Movie
+import com.jesuitasrioja.android_entrega11.databinding.FragmentListAlbumBinding
+import com.jesuitasrioja.android_entrega11.model.Album
 
-class ListMoviesAdapter(private val clickListener: MyListener) : ListAdapter<Movie, ListMoviesAdapter.MyViewHolder>(RowItemDiffCallback())  {
+class ListAlbumAdapter(private val clickListener: MyListener) : ListAdapter<Album, ListAlbumAdapter.MyViewHolder>(RowItemDiffCallback())  {
 
-    class MyViewHolder(val binding: FragmentListMoviesBinding) : RecyclerView.ViewHolder(binding.root)
+    class MyViewHolder(val binding: FragmentListAlbumBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val binding = FragmentListMoviesBinding.inflate(layoutInflater, parent, false)
+        val binding = FragmentListAlbumBinding.inflate(layoutInflater, parent, false)
         return MyViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val movie = getItem(position)
+        val album = getItem(position)
         holder.binding.clickListener=clickListener
-        holder.binding.movie= movie
+        holder.binding.album= album
     }
     override fun onAttachedToRecyclerView(recyclerView: RecyclerView) {
         super.onAttachedToRecyclerView(recyclerView)
@@ -30,16 +30,16 @@ class ListMoviesAdapter(private val clickListener: MyListener) : ListAdapter<Mov
     }
 }
 
-class RowItemDiffCallback : DiffUtil.ItemCallback<Movie>() {
+class RowItemDiffCallback : DiffUtil.ItemCallback<Album>() {
 
-    override fun areItemsTheSame(oldItem: Movie, newItem: Movie): Boolean {
+    override fun areItemsTheSame(oldItem: Album, newItem: Album): Boolean {
         return oldItem == newItem
     }
 
-    override fun areContentsTheSame(oldItem: Movie, newItem: Movie): Boolean {
+    override fun areContentsTheSame(oldItem: Album, newItem: Album): Boolean {
         return oldItem == newItem
     }
 }
-class MyListener(val clickListener: (movie: Movie) -> Unit) {
-    fun onClick(movie: Movie) = clickListener(movie)
+class MyListener(val clickListener: (album: Album) -> Unit) {
+    fun onClick(album: Album) = clickListener(album)
 }

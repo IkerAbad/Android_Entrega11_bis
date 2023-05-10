@@ -1,6 +1,6 @@
 package com.jesuitasrioja.android_entrega11.services
 
-import com.jesuitasrioja.android_entrega11.model.MovieFound
+import com.jesuitasrioja.android_entrega11.model.AlbumFound
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
@@ -9,7 +9,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 //https://itunes.apple.com/search
-private const val BASE_URL = "https://imdb-api.com/en/API/SearchMovie/k_yp80mwpn/"
+private const val BASE_URL = "https://itunes.apple.com/search?term=senderos&entity=album&attribute=albumTerm"
 /*
     Using Moshi to convert JSON response
  */
@@ -17,7 +17,7 @@ private const val BASE_URL = "https://imdb-api.com/en/API/SearchMovie/k_yp80mwpn
 interface ApiServiceMoshi {
 
     @GET("{parameter}")
-    suspend fun getImageRandom(@Path("parameter") parameter:String):MovieFound
+    suspend fun getImageRandom(@Path("parameter") parameter:String):AlbumFound
 
 }
 

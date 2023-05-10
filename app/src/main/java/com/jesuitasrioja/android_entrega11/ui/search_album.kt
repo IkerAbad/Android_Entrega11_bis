@@ -10,20 +10,19 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.NavHostFragment
 import com.jesuitasrioja.android_entrega11.R
-import com.jesuitasrioja.android_entrega11.adapter.ListMoviesAdapter
+import com.jesuitasrioja.android_entrega11.adapter.ListAlbumAdapter
 import com.jesuitasrioja.android_entrega11.adapter.MyListener
-import com.jesuitasrioja.android_entrega11.databinding.FragmentListMoviesBinding
-import com.jesuitasrioja.android_entrega11.databinding.FragmentSearchMoviesBinding
-import com.jesuitasrioja.android_entrega11.viewModel.MoviesViewModel
+import com.jesuitasrioja.android_entrega11.databinding.FragmentSearchAlbumBinding
+import com.jesuitasrioja.android_entrega11.viewModel.AlbumViewModel
 
-class search_movies : Fragment() {
-    private val viewModel: MoviesViewModel by activityViewModels()
-    private lateinit var binding: FragmentSearchMoviesBinding
+class search_album: Fragment() {
+    private val viewModel: AlbumViewModel by activityViewModels()
+    private lateinit var binding: FragmentSearchAlbumBinding
 
-    private val adapter = ListMoviesAdapter(
-        MyListener { movie ->
-            viewModel.changeSelected(movie)
-            NavHostFragment.findNavController(this).navigate(R.id.action_search_movies_to_detail_movie)
+    private val adapter = ListAlbumAdapter(
+        MyListener { album ->
+            viewModel.changeSelected(album)
+            NavHostFragment.findNavController(this).navigate(R.id.action_search_album_to_detail_album)
         }
     )
 
@@ -31,13 +30,13 @@ class search_movies : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentSearchMoviesBinding.inflate(layoutInflater)
+        binding = FragmentSearchAlbumBinding.inflate(layoutInflater)
         binding.lifecycleOwner=this
         binding.viewModel=viewModel
         binding.list.adapter=adapter
         binding.searchButton.setOnClickListener {
             if (!binding.title.text.toString().isEmpty()){
-                viewModel.getMovies(binding.title.text.toString())
+                viewModel.getAlbums(binding.title.text.toString())
             }else{
                 Toast.makeText(context,"Empty search term", Toast.LENGTH_SHORT).show()
             }
