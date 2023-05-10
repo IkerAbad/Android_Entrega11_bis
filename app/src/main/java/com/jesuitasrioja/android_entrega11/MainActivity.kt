@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         )
 
         //TOOLBAR
-        setSupportActionBar(binding.toolbar)
+        //setSupportActionBar(binding.toolbar)
 
         //Cambiar texto navbar dependiendo del fragment
         //NavController
@@ -29,10 +29,10 @@ class MainActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
 
         //appBarConfiguration
-        val appBarConfiguration = AppBarConfiguration(navController.graph)
+        //val appBarConfiguration = AppBarConfiguration(navController.graph)
 
         //Toolbar a Navigation
-        binding.toolbar.setupWithNavController(navController, appBarConfiguration)
+        //binding.toolbar.setupWithNavController(navController, appBarConfiguration)
 
     }
 }

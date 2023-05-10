@@ -9,7 +9,8 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 
-private const val BASE_URL = "https://imdb-api.com/en/API/SearchMovie/k_yp80mwpn/"
+private const val BASE_URL = "https://itunes.apple.com/search?term="
+
 /*
     Using Moshi to convert JSON response
  */
