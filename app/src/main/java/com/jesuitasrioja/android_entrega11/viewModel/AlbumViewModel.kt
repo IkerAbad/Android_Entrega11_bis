@@ -24,6 +24,7 @@ class AlbumViewModel : ViewModel(){
     fun getAlbums(parameter:String){
         viewModelScope.launch {
             try {
+                //println(ApiMoshi.retrofitMoshiService.getAlbums(parameter))
                 _response.value= ApiMoshi.retrofitMoshiService.getAlbums(parameter)
             }catch (e:java.lang.Exception){
                 Log.d("error",e.message!!)
