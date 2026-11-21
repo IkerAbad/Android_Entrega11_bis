@@ -22,8 +22,8 @@ interface ApiServiceMoshi {
     //@GET("{parameter}")
     //suspend fun getImageRandom(@Path("parameter") parameter:String):AlbumFound
 
-    @GET("search") // becomes post/search?term=senderos
-    suspend fun getAlbums (@Query("term") search: String): List<Album>
+    @GET("search?entity=album")
+    suspend fun getAlbums (@Query("term") search: String): AlbumFound
 
 
 }

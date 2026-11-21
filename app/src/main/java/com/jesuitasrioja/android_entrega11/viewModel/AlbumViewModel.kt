@@ -16,7 +16,7 @@ class AlbumViewModel : ViewModel(){
         get() = _response
 
     val imgSrcUrl: String
-        get() = selectedAlbum.artWorkUrl100.toString()
+        get() = selectedAlbum.artworkUrl100
 
     lateinit var selectedAlbum :Album
 
@@ -25,7 +25,7 @@ class AlbumViewModel : ViewModel(){
         viewModelScope.launch {
             try {
                 //println(ApiMoshi.retrofitMoshiService.getAlbums(parameter))
-                _response.value= ApiMoshi.retrofitMoshiService.getAlbums(parameter)
+                _response.value= ApiMoshi.retrofitMoshiService.getAlbums(parameter).results
             }catch (e:java.lang.Exception){
                 Log.d("error",e.message!!)
             }
